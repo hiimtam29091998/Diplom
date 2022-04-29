@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/style/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/style/style.css">
+</head>
+<body>
+<style>
+    div.result{
+     text-align: center;
+     font-size: 18pt;
+    }
+    div.col-sm-3{
+     text-align: center;
+    }
+    div.col-sm{
+     text-align: center;
+    }
+</style>
+	<div class="header_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="logo"><a href="index.html"><img src="static/images/logoo.png"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+                    <h1 class="banner_taital">Application of Machine learning</h1>
+					<h1 class="banner_taital">Predicting calories burned during exercise</h1>
+					<p class="browse_text"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <form action = "{{url_for('predict')}}" method ="POST" >
+                <div class="search_box">
+                      <div class="form-group  row">
+                        <div class="col-sm">
+                            <label for="sex">Gender</label>
+                            <br>
+                            <p class="form-control" style="color:black">{{gender}}</p>
+                        </div>
+                        <div class="col-sm">
+                            <label for="age">Age</label>
+                            <p class="form-control" style="color:black">{{age}}</p>
+                        </div>
+                        <div class="col-sm">
+                            <label for="age">Height</label>
+                            <p class="form-control" style="color:black">{{height}}</p>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group  row">
+                          <div class="col-sm-3">
+                            <label for="age">Weight</label>
+                            <p class="form-control" style="color:black">{{weight}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="trestbps">Duration</label>
+                            <p class="form-control" style="color:black">{{duration}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Heart Rate</label>
+                            <p class="form-control" style="color:black">{{heart_rate}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Body Temperature</label>
+                            <p class="form-control" style="color:black">{{body_temp}}</p>
+                          </div>
+                      </div>
+                      <br>
+                     <div class="result">
+							<p style="color:blue">{{result}}</p>
+					  </div>
+                </div>
+            </form>
+    </div>
+    <div class="copyright">
+  	      <p class="copyright_text">© 2022 Application of Machine learning. All Rights Reserved</p>
+    </div>
+</body>
+</html>

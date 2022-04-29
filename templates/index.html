@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/style/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/style/style.css">
+</head>
+<body>
+<style>
+    div.result{
+     text-align: center;
+    }
+    div.col-sm-3{
+     text-align: center;
+    }
+    div.col-sm{
+     text-align: center;
+    }
+</style>
+	<div class="header_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="logo"><a href="index.html"><img src="static/images/logoo.png"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+                    <h1 class="banner_taital">Application of Machine learning</h1>
+					<h1 class="banner_taital">Predicting calories burned during exercise</h1>
+					<p class="browse_text"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <form action = "{{url_for('predict')}}" method ="POST" >
+                <div class="search_box">
+                      <div class="form-group  row">
+                        <div class="col-sm">
+                            <label for="sex">Gender</label>
+                            <select class="form-control" id="gender"  name="gender" required>
+                              <option disabled selected value>Select an Option</option>
+                              <option value = "0">Male</option>
+                              <option value = "1">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="age">Age</label>
+                            <input type="text" class="form-control" id="age" name="age" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="age">Height</label>
+                            <input type="text" class="form-control" id="height" name="height" required>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group  row">
+                          <div class="col-sm-3">
+                            <label for="age">Weight</label>
+                            <input type="text" class="form-control" id="weight" name="weight" required>
+                          </div>
+                          <div class="col-sm-3">
+                            <label for="trestbps">Duration</label>
+                            <input type="text" class="form-control" id="duration" name="duration"  required>
+                          </div>
+                          <div class="col-sm-3">
+                            <label for="chol">Heart Rate</label>
+                            <input type="text" class="form-control" id="heart_rate" name="heart_rate" required>
+                          </div>
+                          <div class="col-sm-3">
+                            <label for="chol">Body Temperature</label>
+                            <input type="text" class="form-control" id="body_temp" name="body_temp" required>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input class="search_bt" type="submit" value="Result">
+                      </div>
+                     <div class="result">
+							<strong style="color:blue">{{result}}</strong>
+					  </div>
+                </div>
+            </form>
+    </div>
+    <div class="copyright">
+    	<p class="copyright_text">© 2022 Application of Machine learning. All Rights Reserved</p>
+    </div>
+</body>
+</html>
